@@ -86,28 +86,28 @@ const CERTIFICATES: Certificate[] = [
     title: "Pelatihan Data Analytics untuk Siswa SMA/Sederajat",
     issuer: "Thematic Academy Digital Talent Scholarship",
     date: "2024",
-    pdfLink: "https://doc-00-10-apps-viewer.googleusercontent.com/viewer/secure/pdf/efg2jam3jt0tm8trbsjbt4tk977h8b4s/00fr844tvdel7j1m7l5fhjd8b1eqcit1/1772846550000/drive/14555276634386129242/ACFrOgAVQJjShDMPB-Hg8Zk1HuWyDP5FV-uZJ7NOjw8mEL61ZaXjrdwyaiTguZPozAuPiVQjVxJBsVnSF8xPLPpRO6MTdcn1A5tUwWG1iOBFYnC4z6PAioSIShqAZH90vL5asCt1HGXMufpZ3NnZs2cfpMP9MJ4HZYwczWFtelKXnPCHpBhZEBJwS_GLZ0F93sKgU4xTt4eZdhUF06WCx_XpDvVBdh8T1qLgFLFyfb5-NuIh3leL6269fRFCoCrQmpAhcyfFFn2OK2AfwvF_v60I2Quy_jg3HYV-HpQbnk4iV7D8yk0qZp_SeGOrPZE=?print=true"
+    pdfLink: "https://drive.google.com/file/d/1xBCtMS5liFJp5t2HFrFY9Iye0CPN81Fu/view"
   },
   {
     id: 2,
     title: "Sertifikat Kelas Industri Tahap 1 PT ITHO INDOSTOCK",
     issuer: "PT Itho Indostock",
     date: "2025",
-    pdfLink: "https://doc-08-10-apps-viewer.googleusercontent.com/viewer/secure/pdf/efg2jam3jt0tm8trbsjbt4tk977h8b4s/kuj176q7t229dmoo4iksq31m0v48bfq5/1772856825000/drive/14555276634386129242/ACFrOgC1uUvfuoOhzMI9QeAtuicWemVNdRdzAoqCaDPec-YDjNntmazOzrT5HOSkSeR-4RXoPBndra0RpgeYpqI0bwpzRy37iviUXZV_YPdrTUhRr-N8cX_rpY8HMEryh1-38eBmu7fDYtrA3uLuEd8jXfT9hpadWXc095F37-HlaZIi_5vAhr_c546-pxtFE5iaMcZn8mvMllsyTU9yu_ljld6ou6LGu8cbleldZ3Dgtb5stvsesL4zJ-xmTTDiYfe61YbQvQWGkqS2fApzXgPht5K5FUhfAzja_p6JJvDLyF_GZrj8bLGlAdO4qq4=?print=true&nonce=90bnjvttsbcvu&user=14555276634386129242&hash=ff0uvqqj6kpddhcrn4lftqom2d3vm010"
+    pdfLink: "https://drive.google.com/file/d/18Y8ezJJeVZAMeE6-4o-HN6yZVF3U1FCd/view"
   },
   {
     id: 3,
     title: "Sertifikat Kelas Industri Tahap 2 PT ITHO INDOSTOCK",
     issuer: "PT Itho Indostock",
     date: "2025",
-    pdfLink: "https://doc-04-10-apps-viewer.googleusercontent.com/viewer/secure/pdf/efg2jam3jt0tm8trbsjbt4tk977h8b4s/19rbk0sv9tuihovko9b2mqpld4musrgv/1772856900000/drive/14555276634386129242/ACFrOgALe4kfevN9VFzH5SbDO6RxiG8Ire9u0XutSQcoO-U3VIFMj5NyKmTVJKZWtBqXK5Eo3gjoQp0tyWhb8EL3E_1G_Pom4Z5l34H439e6Lr4fKVqa6b1pYiXbrXr1kLN0abWCWbceBTJphzxRmFbpJ9KYZJQxCdvpEvY1nOoyPtfkEIkmkx7wKJRKBp3hDQ3HiyOsUHm3by7QhdKAjWQCRy87foKuVJ3YwvGxMk8EDrSqu-UKTev-j6UtvZZqEi2i5ocoH5E1RX3pruvYWaj0QfPB5Jz6RI2T9kVZRuPGl7noKcjfpKW7QHCp3LQ=?print=true"
+    pdfLink: "https://drive.google.com/file/d/1ffBy9qsK9PH04qm2egyce1tpUwHqeJA3/view"
   },
   {
     id: 4,
     title: "SERTIFIKAT TELKOM DIGIUP CYBER SECURITY",
     issuer: "Telkom Indonesia",
     date: "2025",
-    pdfLink: "https://doc-0s-10-apps-viewer.googleusercontent.com/viewer/secure/pdf/efg2jam3jt0tm8trbsjbt4tk977h8b4s/5l6usdo5upuph0apcbplivmui8deum2c/1772856975000/drive/14555276634386129242/ACFrOgAWyHDWXAUtMXFpRGgXGEa2VnTmKjkH10fNgdeqMkzSZEHehQlvALKtvHJemw8jwulirh7hxTHFuqAbtHx9U4lVNyFmJlDuwuaaxPQ8kUNW7wnkoPuZN1_bGW9pQUs7S1zqmUN5sPfNeJqIBGv2L8IMSRMevzFk6C4R-56zSQl6o6nEGaYsrELBfzozFsXfoo8PYd4ftWGRnnI9ViX72Vl8_WS6INqusqN9KAh6HS_SA31tF45ly8dWlWqpS6LTuBl4COO9NOeD15Yy?print=true&nonce=jrnbsea7b3aic&user=14555276634386129242&hash=ieijt8acslditdg3pjkdm4t0gjnm64vi"
+    pdfLink: "https://drive.google.com/file/d/1PyLhMUgflEGoLGSR8dhM0BgbY2DCNeJ9/view"
   }
 ];
 
@@ -132,47 +132,6 @@ const EXPERIENCES: Experience[] = [
     company: "SDN 06 BOJONGGEDE",
     period: "2014 - 2020",
     description: "Elementary school education foundation."
-  }
-];
-
-const SKILLS = [
-  { 
-    name: "Web Development", 
-    items: [
-      "HTML, CSS, JavaScript", 
-      "React.js & Next.js", 
-      "PHP (Laravel Framework)", 
-      "MySQL", 
-      "CRUD Application Development", 
-      "Basic Object-Oriented Programming (OOP)"
-    ] 
-  },
-  { 
-    name: "Networking", 
-    items: [
-      "Basic Computer Networking (TCP/IP, Subnetting)", 
-      "MikroTik Configuration (VLANs, DHCP, Firewall Rules)", 
-      "Access Point Configuration"
-    ] 
-  },
-  { 
-    name: "System & DevOps", 
-    items: [
-      "Linux Server Administration", 
-      "VPS Deployment & Server Management", 
-      "Docker Containerization", 
-      "Git & GitHub Version Control",
-      "DNS Server Configuration", 
-      "Web Server Configuration", 
-      "SSL Configuration (Self-Signed Certificate)"
-    ] 
-  },
-  { 
-    name: "Hardware & Infrastructure", 
-    items: [
-      "Laptop & Computer Troubleshooting", 
-      "Fiber Optic Installation (Splicing / FTTH)"
-    ] 
   }
 ];
 
@@ -261,7 +220,7 @@ const Navbar = () => {
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-center section-padding relative overflow-hidden">
+    <section id="about" className="min-h-screen flex flex-col justify-center section-padding relative overflow-hidden">
       {/* Background Accents */}
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl -z-10" />
@@ -280,7 +239,7 @@ const Hero = () => {
             <span className="text-accent">Sholahudin</span>
           </h1>
           <p className="text-lg text-slate-400 max-w-2xl mb-10 leading-relaxed">
-            I am a student of Information Systems, Networking, and Applications (SIJA) with a strong interest in DevOps and Web Dev. Experienced in building and deploying web applications using React, Next.js, and Laravel, and managing Linux servers on VPS. Familiar with MikroTik configuration, VLANs, and fiber optic installation (FTTH and splicing).
+            I am a student of Information Systems, Networking, and Applications (SIJA) with a profound interest in Information Technology. I am passionate about exploring the fields of DevOps, Web Development, and Network Infrastructure.
           </p>
           
           <div className="flex flex-wrap gap-4">
@@ -299,9 +258,9 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative hidden lg:block"
+          className="relative mt-12 lg:mt-0"
         >
-          <div className="relative w-[450px] h-[550px] mx-auto group">
+          <div className="relative w-full max-w-[450px] aspect-[450/550] mx-auto group">
             {/* Decorative Frame */}
             <div className="absolute inset-0 border-2 border-accent/20 rounded-[40px] translate-x-6 translate-y-6 -z-10" />
             <div className="absolute inset-0 bg-accent/5 rounded-[40px] -z-20 scale-95 translate-x-12 translate-y-12 blur-2xl opacity-50" />
@@ -554,34 +513,6 @@ const EducationHistory = () => {
           </div>
         </div>
 
-        <div className="pt-16 border-t border-white/5">
-          <h2 className="text-4xl font-bold mb-8 text-white">Technical Skills</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {SKILLS.map((skillGroup, index) => (
-              <motion.div 
-                key={skillGroup.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-slate-900 p-8 rounded-3xl border border-white/5"
-              >
-                <div className="w-12 h-12 bg-slate-800 rounded-2xl flex items-center justify-center mb-6 shadow-sm text-accent">
-                  {index === 0 ? <Code2 size={24} /> : index === 1 ? <Cpu size={24} /> : index === 2 ? <Layers size={24} /> : <Globe size={24} />}
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-white">{skillGroup.name}</h3>
-                <ul className="space-y-2">
-                  {skillGroup.items.map(item => (
-                    <li key={item} className="text-slate-400 flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-accent/40" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
