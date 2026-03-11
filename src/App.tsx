@@ -71,9 +71,9 @@ const PROJECTS: Project[] = [
   },
   {
     id: 3,
-    title: "Web-Based Game",
-    description: "Game seru-seruan berbasis website yang interaktif.",
-    tags: ["JavaScript", "HTML5 Canvas", "CSS3"],
+    title: "Website Personal Portofolio",
+    description: "Website untuk Portofolio Pribadi.",
+    tags: ["React", "Tailwind"],
     image: `https://s0.wp.com/mshots/v1/${encodeURIComponent("https://game.adibrijal.my.id")}?w=800&h=600`,
     link: "https://game.adibrijal.my.id",
     github: "https://github.com/rijalunns"
@@ -159,10 +159,10 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <motion.a 
           href="#" 
-          className="text-2xl font-display font-bold tracking-tighter text-white"
+          className="text-3xl font-display font-black tracking-tighter text-black"
           whileHover={{ scale: 1.05 }}
         >
-          ARS<span className="text-accent">.</span>
+          ARS<span className="text-black">.</span>
         </motion.a>
 
         {/* Desktop Nav */}
@@ -171,7 +171,7 @@ const Navbar = () => {
             <a 
               key={link.name} 
               href={link.href} 
-              className="text-sm font-medium text-slate-400 hover:text-accent transition-colors"
+              className="text-sm font-bold uppercase tracking-widest text-black hover:underline decoration-4 underline-offset-8 transition-all"
             >
               {link.name}
             </a>
@@ -179,7 +179,7 @@ const Navbar = () => {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-accent text-white px-5 py-2 rounded-full text-sm font-medium"
+            className="manga-button"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Contact
@@ -187,7 +187,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
+        <button className="md:hidden text-black border-2 border-black p-1" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -199,13 +199,13 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-slate-900 border-b border-white/10 p-6 md:hidden flex flex-col space-y-4"
+            className="absolute top-full left-0 right-0 bg-white border-b-4 border-black p-6 md:hidden flex flex-col space-y-4"
           >
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
                 href={link.href} 
-                className="text-lg font-medium text-slate-400"
+                className="text-xl font-display text-black"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
@@ -220,25 +220,36 @@ const Navbar = () => {
 
 const Hero = () => {
   return (
-    <section id="about" className="min-h-screen flex flex-col justify-center section-padding relative overflow-hidden">
+    <section id="about" className="min-h-screen flex flex-col justify-center section-padding relative overflow-hidden bg-white">
       {/* Background Accents */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl -z-10" />
+      <div className="absolute inset-0 speed-lines opacity-20 -z-10" />
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-black/5 rounded-full blur-3xl -z-10" />
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-bold uppercase tracking-wider mb-6">
-            Available for new opportunities
-          </span>
-          <h1 className="text-5xl md:text-7xl font-bold leading-[1.1] mb-8 text-white">
+          <motion.span 
+            animate={{ y: [0, -5, 0] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            className="inline-block px-4 py-2 border-2 border-black bg-white text-black text-xs font-black uppercase tracking-widest mb-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+          >
+            Status: Active
+          </motion.span>
+          <h1 className="text-6xl md:text-8xl font-black leading-[0.9] mb-8 text-black">
             Adib Rijalun <br />
-            <span className="text-accent">Sholahudin</span>
+            <motion.span 
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 200 }}
+              className="bg-black text-white px-4 py-2 inline-block mt-2"
+            >
+              Sholahudin
+            </motion.span>
           </h1>
-          <p className="text-lg text-slate-400 max-w-2xl mb-10 leading-relaxed">
+          <p className="text-xl text-black font-medium max-w-2xl mb-10 leading-relaxed border-l-8 border-black pl-6">
             I am a student of Information Systems, Networking, and Applications (SIJA) with a profound interest in Information Technology. I am passionate about exploring the fields of DevOps, Web Development, and Network Infrastructure.
           </p>
           
@@ -246,7 +257,7 @@ const Hero = () => {
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-accent text-white px-8 py-4 rounded-2xl font-semibold flex items-center gap-2 shadow-lg shadow-accent/20"
+              className="manga-button"
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             >
               View Projects <ChevronRight size={18} />
@@ -262,45 +273,49 @@ const Hero = () => {
         >
           <div className="relative w-full max-w-[450px] aspect-[450/550] mx-auto group">
             {/* Decorative Frame */}
-            <div className="absolute inset-0 border-2 border-accent/20 rounded-[40px] translate-x-6 translate-y-6 -z-10" />
-            <div className="absolute inset-0 bg-accent/5 rounded-[40px] -z-20 scale-95 translate-x-12 translate-y-12 blur-2xl opacity-50" />
+            <motion.div 
+              animate={{ x: [24, 28, 24], y: [24, 20, 24] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute inset-0 border-4 border-black translate-x-6 translate-y-6 -z-10" 
+            />
             
             {/* Main Image */}
-            <div className="w-full h-full rounded-[40px] overflow-hidden border-8 border-slate-900 shadow-2xl relative">
+            <div className="w-full h-full overflow-hidden border-8 border-black shadow-[20px_20px_0px_0px_rgba(0,0,0,1)] relative">
               <img 
                 src={PROFILE_IMAGE_URL} 
                 alt="Adib Rijalun Sholahudin Profile" 
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover grayscale contrast-125 transition-all duration-700"
                 referrerPolicy="no-referrer"
               />
+              <div className="absolute inset-0 halftone pointer-events-none" />
             </div>
 
             {/* Floating Badges */}
             <motion.div 
-              animate={{ y: [0, -10, 0] }}
+              animate={{ y: [0, -10, 0], rotate: [0, 2, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-6 -right-6 glass p-4 rounded-2xl shadow-xl flex items-center gap-3"
+              className="absolute -top-6 -right-6 bg-white border-4 border-black p-4 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex items-center gap-3 manga-float"
             >
-              <div className="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center text-white">
+              <div className="w-10 h-10 bg-black rounded-none flex items-center justify-center text-white">
                 <Code2 size={20} />
               </div>
               <div>
-                <p className="text-[10px] font-bold text-slate-400 uppercase">Specialty</p>
-                <p className="text-sm font-bold">SIJA Student</p>
+                <p className="text-[10px] font-black text-black uppercase">Specialty</p>
+                <p className="text-sm font-black">SIJA Student</p>
               </div>
             </motion.div>
 
             <motion.div 
-              animate={{ y: [0, 10, 0] }}
+              animate={{ y: [0, 10, 0], rotate: [0, -2, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute -bottom-6 -left-6 glass p-4 rounded-2xl shadow-xl flex items-center gap-3"
+              className="absolute -bottom-6 -left-6 bg-white border-4 border-black p-4 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex items-center gap-3 manga-float"
             >
-              <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-white">
+              <div className="w-10 h-10 bg-black rounded-none flex items-center justify-center text-white">
                 <Globe size={20} />
               </div>
               <div>
-                <p className="text-[10px] font-bold text-slate-400 uppercase">Focus</p>
-                <p className="text-sm font-bold">DevOps & Networking</p>
+                <p className="text-[10px] font-black text-black uppercase">Focus</p>
+                <p className="text-sm font-black">DevOps & Networking</p>
               </div>
             </motion.div>
           </div>
@@ -314,37 +329,44 @@ const Projects = () => {
   const [previewProject, setPreviewProject] = useState<Project | null>(null);
 
   return (
-    <section id="projects" className="section-padding bg-slate-900/50">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-          <div>
-            <h2 className="text-4xl font-bold mb-4 text-white">Selected Works</h2>
-            <p className="text-slate-400 max-w-md">A collection of projects where I've combined design thinking with technical implementation.</p>
-          </div>
+    <section id="projects" className="section-padding bg-white border-t-8 border-black relative">
+      <div className="absolute inset-0 halftone opacity-5 pointer-events-none" />
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="border-l-8 border-black pl-6"
+          >
+            <h2 className="text-5xl font-black mb-4 text-black">Selected Works</h2>
+            <p className="text-black font-bold max-w-md">A collection of projects where I've combined design thinking with technical implementation.</p>
+          </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {PROJECTS.map((project, index) => (
             <motion.div 
               key={project.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group bg-slate-900 rounded-3xl overflow-hidden border border-white/5 hover:border-accent/30 hover:shadow-2xl transition-all duration-500"
+              whileHover={{ y: -10, rotate: index % 2 === 0 ? 1 : -1 }}
+              className="group manga-card overflow-hidden manga-pop"
             >
-              <div className="aspect-[4/3] overflow-hidden relative">
+              <div className="aspect-[4/3] overflow-hidden relative border-b-4 border-black">
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-slate-950/80 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-4">
+                <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-4">
                   <div className="flex gap-4">
                     <button 
                       onClick={() => setPreviewProject(project)}
-                      className="px-4 py-2 bg-accent text-white rounded-full text-sm font-bold hover:bg-accent/80 transition-colors flex items-center gap-2"
+                      className="manga-button"
                     >
                       <Globe size={16} /> Preview
                     </button>
@@ -352,7 +374,7 @@ const Projects = () => {
                       href={project.link} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="p-3 bg-white rounded-full text-primary hover:bg-accent hover:text-white transition-colors"
+                      className="p-4 bg-white border-2 border-black text-black hover:bg-black hover:text-white transition-colors"
                     >
                       <ExternalLink size={20} />
                     </a>
@@ -361,7 +383,7 @@ const Projects = () => {
                         href={project.github} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="p-3 bg-white rounded-full text-primary hover:bg-accent hover:text-white transition-colors"
+                        className="p-4 bg-white border-2 border-black text-black hover:bg-black hover:text-white transition-colors"
                       >
                         <Github size={20} />
                       </a>
@@ -372,13 +394,13 @@ const Projects = () => {
               <div className="p-8">
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map(tag => (
-                    <span key={tag} className="text-[10px] font-bold uppercase tracking-widest text-slate-500 border border-white/5 px-2 py-1 rounded">
+                    <span key={tag} className="text-[10px] font-black uppercase tracking-widest text-black border-2 border-black px-2 py-1">
                       {tag}
                     </span>
                   ))}
                 </div>
-                <h3 className="text-2xl font-bold mb-2 text-white group-hover:text-accent transition-colors">{project.title}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{project.description}</p>
+                <h3 className="text-3xl font-black mb-2 text-black group-hover:underline decoration-4 underline-offset-4">{project.title}</h3>
+                <p className="text-black font-medium text-sm leading-relaxed">{project.description}</p>
               </div>
             </motion.div>
           ))}
@@ -392,48 +414,46 @@ const Projects = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 bg-slate-950/90 backdrop-blur-sm"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 bg-black/90 backdrop-blur-sm"
           >
             <motion.div 
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative w-full max-w-6xl aspect-video bg-slate-900 rounded-[32px] overflow-hidden border border-white/10 shadow-2xl flex flex-col"
+              className="relative w-full max-w-6xl aspect-video bg-white border-8 border-black shadow-[20px_20px_0px_0px_rgba(0,0,0,1)] flex flex-col"
             >
-              <div className="p-4 border-b border-white/10 flex justify-between items-center bg-slate-900">
+              <div className="p-4 border-b-4 border-black flex justify-between items-center bg-white">
                 <div className="flex items-center gap-3">
                   <div className="flex gap-1.5">
-                    <div className="w-3 h-3 rounded-full bg-red-500" />
-                    <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                    <div className="w-3 h-3 rounded-full bg-green-500" />
+                    <div className="w-4 h-4 border-2 border-black bg-black" />
+                    <div className="w-4 h-4 border-2 border-black bg-white" />
+                    <div className="w-4 h-4 border-2 border-black bg-black" />
                   </div>
-                  <span className="text-sm font-medium text-slate-400 ml-4 truncate max-w-[200px] md:max-w-md">
+                  <span className="text-sm font-black text-black ml-4 truncate max-w-[200px] md:max-w-md uppercase tracking-widest">
                     {previewProject.link}
                   </span>
                 </div>
                 <button 
                   onClick={() => setPreviewProject(null)}
-                  className="p-2 hover:bg-white/5 rounded-full text-slate-400 hover:text-white transition-colors"
+                  className="p-2 hover:bg-black hover:text-white border-2 border-black transition-colors"
                 >
                   <X size={24} />
                 </button>
               </div>
               <div className="flex-1 bg-white relative">
-                {/* Iframe Preview - Note: many sites block iframes via X-Frame-Options */}
                 <iframe 
                   src={previewProject.link} 
-                  className="w-full h-full border-none"
+                  className="w-full h-full border-none grayscale"
                   title={`Preview of ${previewProject.title}`}
                 />
-                {/* Fallback Overlay if iframe is blocked or just to provide a better UX */}
-                <div className="absolute inset-0 pointer-events-none flex items-center justify-center bg-slate-950/5 opacity-0 hover:opacity-100 transition-opacity">
-                   <div className="bg-white p-6 rounded-2xl shadow-xl text-center pointer-events-auto">
-                      <p className="text-slate-900 font-bold mb-4">Previewing {previewProject.title}</p>
+                <div className="absolute inset-0 pointer-events-none flex items-center justify-center bg-black/5 opacity-0 hover:opacity-100 transition-opacity">
+                   <div className="bg-white p-8 border-4 border-black shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] text-center pointer-events-auto">
+                      <p className="text-black font-black text-2xl mb-6 uppercase tracking-tighter">Previewing {previewProject.title}</p>
                       <a 
                         href={previewProject.link} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-xl font-bold"
+                        className="manga-button inline-flex items-center gap-2"
                       >
                         Open Live Site <ExternalLink size={18} />
                       </a>
@@ -450,14 +470,20 @@ const Projects = () => {
 
 const Certificates = () => {
   return (
-    <section id="certificates" className="section-padding bg-slate-950">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-12">
-          <h2 className="text-4xl font-bold mb-4 text-white">Certifications</h2>
-          <p className="text-slate-400 max-w-md">Professional recognition and specialized training in modern technologies.</p>
-        </div>
+    <section id="certificates" className="section-padding bg-white border-t-8 border-black relative">
+      <div className="absolute inset-0 speed-lines opacity-10 pointer-events-none" />
+      <div className="max-w-7xl mx-auto relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="mb-16 border-l-8 border-black pl-6"
+        >
+          <h2 className="text-5xl font-black mb-4 text-black">Certifications</h2>
+          <p className="text-black font-bold max-w-md">Professional recognition and specialized training in modern technologies.</p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {CERTIFICATES.map((cert, index) => (
             <motion.div 
               key={cert.id}
@@ -465,18 +491,19 @@ const Certificates = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group bg-slate-900 rounded-2xl overflow-hidden border border-white/5 hover:border-accent/30 transition-all cursor-pointer"
+              whileHover={{ scale: 1.05, rotate: index % 2 === 0 ? -2 : 2 }}
+              className="group manga-card cursor-pointer manga-pop"
               onClick={() => window.open(cert.pdfLink, '_blank')}
             >
               <div className="p-8 flex flex-col h-full">
-                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
+                <div className="w-12 h-12 bg-black text-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Layers size={24} />
                 </div>
-                <p className="text-[10px] font-bold text-accent uppercase tracking-widest mb-2">{cert.issuer}</p>
-                <h3 className="text-lg font-bold mb-4 leading-tight text-white flex-grow">{cert.title}</h3>
-                <div className="flex justify-between items-center pt-4 border-t border-white/5">
-                  <p className="text-slate-500 text-sm">{cert.date}</p>
-                  <span className="text-[10px] font-bold text-slate-400 border border-white/10 px-2 py-1 rounded uppercase group-hover:border-accent/50 group-hover:text-accent transition-colors">View PDF</span>
+                <p className="text-[10px] font-black text-black uppercase tracking-widest mb-2 border-b-2 border-black inline-block w-fit">{cert.issuer}</p>
+                <h3 className="text-2xl font-black mb-4 leading-tight text-black flex-grow uppercase">{cert.title}</h3>
+                <div className="flex justify-between items-center pt-4 border-t-2 border-black">
+                  <p className="text-black font-bold text-sm">{cert.date}</p>
+                  <span className="text-[10px] font-black text-black border-2 border-black px-2 py-1 uppercase group-hover:bg-black group-hover:text-white transition-colors">View PDF</span>
                 </div>
               </div>
             </motion.div>
@@ -489,30 +516,42 @@ const Certificates = () => {
 
 const EducationHistory = () => {
   return (
-    <section id="experience" className="section-padding bg-slate-900/30">
-      <div className="max-w-7xl mx-auto flex flex-col gap-16">
+    <section id="experience" className="section-padding bg-white border-t-8 border-black relative">
+      <div className="absolute inset-0 halftone opacity-5 pointer-events-none" />
+      <div className="max-w-7xl mx-auto flex flex-col gap-16 relative z-10">
         <div>
-          <h2 className="text-4xl font-bold mb-8 text-white">Education History</h2>
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="mb-16 border-l-8 border-black pl-6"
+          >
+            <h2 className="text-5xl font-black mb-4 text-black">Education History</h2>
+            <p className="text-black font-bold max-w-md">My academic journey and milestones.</p>
+          </motion.div>
           <div className="space-y-12">
             {EXPERIENCES.map((exp, index) => (
               <motion.div 
                 key={exp.id}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="relative pl-8 border-l-2 border-white/10"
+                className="relative pl-12 border-l-8 border-black"
               >
-                <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-accent border-4 border-slate-950 shadow-sm" />
-                <span className="text-sm font-bold text-accent mb-1 block">{exp.period}</span>
-                <h3 className="text-xl font-bold mb-1 text-white">{exp.role}</h3>
-                <p className="text-slate-400 font-medium mb-3">{exp.company}</p>
-                <p className="text-slate-500 leading-relaxed">{exp.description}</p>
+                <motion.div 
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: index * 0.5 }}
+                  className="absolute left-[-16px] top-0 w-8 h-8 bg-black border-4 border-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]" 
+                />
+                <span className="text-lg font-black text-black mb-2 block uppercase tracking-tighter">{exp.period}</span>
+                <h3 className="text-3xl font-black mb-1 text-black uppercase">{exp.role}</h3>
+                <p className="text-black font-black mb-4 bg-black text-white px-2 py-1 inline-block">{exp.company}</p>
+                <p className="text-black font-medium leading-relaxed max-w-2xl">{exp.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
@@ -535,62 +574,65 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section-padding bg-slate-950 text-white overflow-hidden relative">
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-accent/5 skew-x-12 translate-x-1/4" />
+    <section id="contact" className="section-padding bg-white text-black overflow-hidden relative border-t-8 border-black">
+      <div className="absolute inset-0 speed-lines opacity-10 pointer-events-none" />
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight text-white">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-6xl md:text-8xl font-black mb-8 leading-[0.85] text-black uppercase"
+            >
               Let's build <br />
               something <br />
-              <span className="text-accent">extraordinary.</span>
-            </h2>
-            <p className="text-slate-400 text-xl mb-12 max-w-md">
+              <motion.span 
+                animate={{ x: [-5, 5, -5] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="bg-black text-white px-4 py-2 inline-block mt-4"
+              >
+                extraordinary.
+              </motion.span>
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-black font-bold text-xl mb-12 max-w-md border-l-8 border-black pl-6"
+            >
               Have a project in mind or just want to say hi? I'm always open to discussing new opportunities and creative ideas.
-            </p>
+            </motion.p>
             
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                  <Mail size={20} />
-                </div>
-                <div>
-                  <p className="text-slate-500 text-sm uppercase tracking-widest font-bold">Email Me</p>
-                  <p className="text-xl font-medium text-white">dibrijal@gmail.com</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                  <Phone size={20} />
-                </div>
-                <div>
-                  <p className="text-slate-500 text-sm uppercase tracking-widest font-bold">Phone</p>
-                  <p className="text-xl font-medium text-white">+6285714608280</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                  <Instagram size={20} />
-                </div>
-                <div>
-                  <p className="text-slate-500 text-sm uppercase tracking-widest font-bold">Instagram</p>
-                  <p className="text-xl font-medium text-white">adibrijal</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                  <Globe size={20} />
-                </div>
-                <div>
-                  <p className="text-slate-500 text-sm uppercase tracking-widest font-bold">Location</p>
-                  <p className="text-xl font-medium text-white">Bojonggede, Bogor, Jawa Barat, Indonesia</p>
-                </div>
-              </div>
+            <div className="space-y-8">
+              {[
+                { icon: Mail, label: "Email Me", value: "dibrijal@gmail.com", color: "bg-black", text: "text-white" },
+                { icon: Phone, label: "Phone", value: "+6285714608280", color: "bg-white", text: "text-black" },
+                { icon: Instagram, label: "Instagram", value: "adibrijal", color: "bg-black", text: "text-white" }
+              ].map((item, idx) => (
+                <motion.div 
+                  key={idx}
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 + (idx * 0.1) }}
+                  className="flex items-center gap-6"
+                >
+                  <div className={`w-16 h-16 ${item.color} flex items-center justify-center ${item.text} border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]`}>
+                    <item.icon size={24} />
+                  </div>
+                  <div>
+                    <p className="text-black text-xs uppercase tracking-widest font-black">{item.label}</p>
+                    <p className="text-2xl font-black text-black">{item.value}</p>
+                  </div>
+                </motion.div>
+              ))}
 
-              <div className="pt-8 flex items-center gap-6 text-slate-400">
-                <a href="https://github.com/rijalunns" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors"><Github size={28} /></a>
-                <a href="#" className="hover:text-accent transition-colors"><Linkedin size={28} /></a>
+              <div className="pt-8 flex items-center gap-8 text-black">
+                <motion.a whileHover={{ scale: 1.2, rotate: 5 }} href="https://github.com/rijalunns" target="_blank" rel="noopener noreferrer" className="transition-transform"><Github size={32} /></motion.a>
+                <motion.a whileHover={{ scale: 1.2, rotate: -5 }} href="#" className="transition-transform"><Linkedin size={32} /></motion.a>
               </div>
             </div>
           </div>
@@ -599,41 +641,41 @@ const Contact = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="bg-slate-900/50 backdrop-blur-xl p-10 rounded-[40px] border border-white/10"
+            className="manga-card p-10"
           >
-            <form className="space-y-6" onSubmit={handleWhatsAppSubmit}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <form className="space-y-8" onSubmit={handleWhatsAppSubmit}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-slate-500">Name</label>
+                  <label className="text-xs font-black uppercase tracking-widest text-black">Name</label>
                   <input 
                     type="text" 
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-accent transition-colors text-white" 
+                    className="w-full bg-white border-4 border-black px-6 py-4 focus:outline-none focus:bg-black focus:text-white transition-all text-black font-bold" 
                     placeholder="Your Name" 
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-slate-500">Email</label>
+                  <label className="text-xs font-black uppercase tracking-widest text-black">Email</label>
                   <input 
                     type="email" 
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-accent transition-colors text-white" 
+                    className="w-full bg-white border-4 border-black px-6 py-4 focus:outline-none focus:bg-black focus:text-white transition-all text-black font-bold" 
                     placeholder="your@email.com" 
                   />
                 </div>
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-slate-500">Message</label>
+                <label className="text-xs font-black uppercase tracking-widest text-black">Message</label>
                 <textarea 
                   rows={4} 
                   required
                   value={formData.message}
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-accent transition-colors resize-none text-white" 
+                  className="w-full bg-white border-4 border-black px-6 py-4 focus:outline-none focus:bg-black focus:text-white transition-all resize-none text-black font-bold" 
                   placeholder="Tell me about your project..." 
                 />
               </div>
@@ -641,7 +683,7 @@ const Contact = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full bg-accent text-white py-5 rounded-2xl font-bold text-lg shadow-lg shadow-accent/20"
+                className="w-full manga-button py-6 text-2xl"
               >
                 Send Message
               </motion.button>
@@ -649,9 +691,8 @@ const Contact = () => {
           </motion.div>
         </div>
 
-        <footer className="mt-24 pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-slate-500 text-sm">© 2026 Adib Rijalun Sholahudin. All rights reserved.</p>
-          
+        <footer className="mt-24 pt-12 border-t-4 border-black flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-black font-black text-sm uppercase tracking-widest">© 2026 Adib Rijalun Sholahudin. All rights reserved.</p>
         </footer>
       </div>
     </section>
@@ -660,7 +701,8 @@ const Contact = () => {
 
 export default function App() {
   return (
-    <div className="selection:bg-accent/30">
+    <div className="selection:bg-black selection:text-white">
+      <div className="fixed inset-0 halftone opacity-[0.03] pointer-events-none z-[9999]" />
       <Navbar />
       <main>
         <Hero />
